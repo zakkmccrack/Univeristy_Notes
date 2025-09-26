@@ -44,7 +44,7 @@ E' completo entro il limite massimo, quindi è fondamentalmente ottimale, in bas
 ### Cost sensitive search
 ![cost_search](attachments/cost_search.png)
 
-$`S -> p1, d3, e9 -> p`$ minore
+```S -> p1, d3, e9 -> p``` minore
 $p -> d3,e9,q16 -> d$ minore
 $d -> b4,e5,e9,c11,q16-> b$ minore, e9 viene cancellato
 $b -> ...$
