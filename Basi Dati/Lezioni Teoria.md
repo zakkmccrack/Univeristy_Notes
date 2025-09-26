@@ -44,6 +44,7 @@ Vista la proprietà di indipendenza tra programmi e dati, i dati effettivi e la 
 ### Viste multiple sui dati
 Essendo multi utenti, questi possono richiedere diverse viste del DB. Una vita è un sottoinsieme del DB o un insieme di dati virtuali.
 Esempio di vista	
+
 ![esempio_vista](attachments/esempio_vista.png)
 #### Condivisione Dati e gestioni transizioni in ambienti multi utenti
 Essendo che un DBMS deve permettere a più utenti di accedere in contemporanea, deve contenere un software per il controllo della concorrenza.
