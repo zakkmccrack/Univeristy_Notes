@@ -21,7 +21,7 @@ Il sistema di gestione è il DBMS, software che facilita lavorare con una Base D
 - Processing attivo dei dati 
 - Funzioni di presentazione e visualizzazione dei dati
 Esempio Università
-![[attachments/esempio_università.png]]
+![esempio_università](attachments/esempio_università.png)
 
 ### Caratteristiche approccio con DB
 Rispetto ad una gestione con file il DB:
@@ -42,7 +42,8 @@ Un DBMS offre un **modello dei dati** ovvero una rappresentazione concettuale de
 Vista la proprietà di indipendenza tra programmi e dati, i dati effettivi e la loro struttura sono salvati nel catalogo separatamente dai programmi.
 ### Viste multiple sui dati
 Essendo multi utenti, questi possono richiedere diverse viste del DB. Una vita è un sottoinsieme del DB o un insieme di dati virtuali.
-Esempio di vista	![esempio_vista](attachments/esempio_vista.png)
+Esempio di vista	
+![esempio_vista](attachments/esempio_vista.png)
 #### Condivisione Dati e gestioni transizioni in ambienti multi utenti
 Essendo che un DBMS deve permettere a più utenti di accedere in contemporanea, deve contenere un software per il controllo della concorrenza.
 Quando un processo esegue delle azioni nel DB, questo deve garantire
