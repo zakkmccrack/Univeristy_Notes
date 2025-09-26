@@ -14,7 +14,7 @@ Il nodo rappresenta la struttura dati dell'albero mentre lo stato sta all'intern
 ### DFS (Depth First Search)
 Espandere prima il nodo più profondo, perché la frontiera è implementata come stack. Infatti è uno stack LIFO
 Esempio
-![[Pasted image 20250926111936.png]]
+![dfs_graph.png](attachments/dfs_graph.png)
 Partendo da S:
 $S -> d, e, p$ = Frontiera in ordine
 LIFO -> prossimo nodo da espandere -> p
@@ -42,8 +42,10 @@ La frontiera cresce e riempie la memoria, soprattutto con un branching factor mo
 Metto un limite di profondità. Se non trovo soluzione aumenta gradualmente il limite.
 E' completo entro il limite massimo, quindi è fondamentalmente ottimale, in base a come lo applico quindi.
 ### Cost sensitive search
-![[Pasted image 20250926122746.png]]$S -> p1, d3, e9 -> p$ minore
+![cost_search](attachments/cost_search.png)
+$S -> p1, d3, e9 -> p$ minore
 $p -> d3,e9,q16 -> d$ minore
 $d -> b4,e5,e9,c11,q16-> b$ minore, e9 viene cancellato
 $b -> ...$
 
+![[attachments/Pasted image 20250926182819.png]]
