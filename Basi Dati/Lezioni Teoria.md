@@ -21,6 +21,7 @@ Il sistema di gestione è il DBMS, software che facilita lavorare con una Base D
 - Processing attivo dei dati 
 - Funzioni di presentazione e visualizzazione dei dati
 Esempio Università
+
 ![esempio_università](attachments/esempio_università.png)
 
 ### Caratteristiche approccio con DB
