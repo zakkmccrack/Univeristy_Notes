@@ -48,31 +48,34 @@ Per entrambi i modelli vi sono 3 procedure di colloquio:
 	- Banda -> banda passante di frequenze che può essere usata per la trasmissione dei dati. Massima velocità alla quale è possibile trasmettere informazioni.  Per valutare la velocità di banda si usano strumenti come ping, traceroute, speedtest, pingtest e netindex
 
 ### Tipo di trasmissione
-- Point-to-Point -> tra due DTE diretti
-- Multi-point -> Collegamento condiviso tra più DTE.
+- Point-to-Point -> tra due DTE diretti mediante linea telefonica o dedicata
+- Multi-point -> Collegamento condiviso tra più DTE. La condivisione avviene in maniera temporale o condivisone dello spazio del canale.
 
 ### Classificazione delle reti
-- WAN -> grandi senza limitazione, DTE distanti, arriva fino a Tbits 
-- LAN -> 1 o 2 km, uso privato, arriva fino  a Gbits
+- WAN -> grandi senza limitazione, DTE distanti, arriva fino a Tbits. Sono distribute, quindi anche se un nodo cade, il routing instrada verso un'altra Path.
+- LAN -> 1 o 2 km, uso privato, arriva fino a migliaia Gbits. Possono esserci alcuni DTE che fungono da server. 
 - WLAN -> Reti locali Lan ma senza fili. Usa lo spettro radio. La velocità dipende dallo standard usato.
-	- 2.4ghz -> offre una copertura ampia ma poco potente
+    - wifi 5 802.11ac 3.5gbps
+    -  wifi 6 802.11ax 9.6 gbps
+    - 2.4ghz -> offre una copertura ampia ma poco potente
 	- 5ghz -> copertura meno ampia ma più potente
 - MAN ->livello cittadino, fibra ottica ad alta velocità
-
+*Docker*
+Per sicurezza tutti i software in genere girano come demoni separati all'interno dei software server
 ### Reti wireless
 Usate principalmente per la comunicazione mobile. Abbiamo
 - WLAN (802.11)
 - WiMax (IEEE 802.16x)
 - IEEE 802.20
-- CDPD
+- CDPD (Cellular Digital Packet Data)
 
 ### Struttura delle reti
 La topologia  di una rete è la configurazione geometrica dei collegamenti fra i vari componenti. Sono volte a creare stabilità, a migliorare il rendimento e a diminuire i costi.
 - Rete ad albero -> stazioni a livelli, con un livello centrale. Semplice ma vulnerabile
-- Rete a dorsale -> collegamento multi punto via Ethernet. Questa crea una specie di spina dorsale lungo tutta la rete
-- Rete a stella -> ogni nodo è connesso ad un dispositivo centrale. E' più economica rispetto ad una struttura a maglia completa
-- Rete ad anello -> molto usata in passato. Ogni nodo ha un punto-a-punto con solo 2 nodi. Ha una trasmissione unidirezionale, ogni nodo rigenera il segnale
-- Rete a maglia (MESH) ->tutti i nodi sono collegati tra loro. Il costo totale del percorso è $N(N-1)/2$. Ogni apparato è ha un collegamento Duplex.
+- Rete a dorsale -> collegamento multi punto via Ethernet. Questa crea una specie di spina dorsale lungo tutta la rete. Questa rete richiedeva anche una speciale terminazione montata a fine del cavo.
+- Rete a stella -> ogni nodo è connesso ad un dispositivo centrale. E' più economica rispetto ad una struttura a maglia completa. Ad esempio un ethernet con tipologia a stella aveva un doppino UTP non schermato, quindi in plastica.
+- Rete ad anello -> molto usata in passato. Ogni nodo ha un punto-a-punto con solo 2 nodi. Ha una trasmissione unidirezionale, ogni nodo rigenera il segnale.  Non supporta errori
+- Rete a maglia (MESH) -> tutti i nodi sono collegati tra loro. Il costo totale del percorso è $N(N-1)/2$. Ogni apparato è ha un collegamento Duplex.
 
 ### Reti Mesh
 Combinazione di nodi fissi e mobili interconnessi tra loro con link wireless per avere una rete auto-configurante multi-hop.
