@@ -122,3 +122,31 @@ I protocolli per le relazioni tra due DTE si possono dividere in:
 	- TDM
 	- FDM
 	- SDH
+### La trasmissione Dati
+Lo strato fisico deve trasportare dati. Questi sono
+- digitali -> rappresentazione discreta
+- analogici -> segnale intenso, continuo
+Nei DTE si usa una rappresentazione digitale trascrivendo ogni dato in sequenze di 0 o1.
+I dati vengono sottoposti a:
+- conversione in un differente tipo di segnale digitale, con livello 0 o 1
+- conversione in analogico (modulazione), quindi un segnale con diversi livelli di intensi
+
+### Segnali Sinusoidali
+E' un segnale che varia nel tempo secondo la legge $U = U sin (ωt+Φ)$ dove t è il tempo trascorso, ω velocità angolare e Φ lo sfasamento di fase. La curva descritta prende il nome di sinusoide
+![[Pasted image 20251001125920.png]]
+Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso anti orario con velocita ω. Quindi Φ rappresenta l'angolo che viene formato con l'asse x all'istante 0.
+
+Ruotando tornerà alla posizione di partenza e si ripeterà. Il numero di volte al secondo che il segnale torna allo stato di partenza, si chiama frequenza e viene calcolata in $Hertz = 1/t$.
+
+Un segnale che ha una frequenza di $1KHz$ vuol dire che percorrerà la circonferenza 1000 volte al secondo. La velocità è data dunque da $2\pi f$. Il periodo che sta nel nel mezzo della ripetizione del segnale si chiama periodo.
+
+Un periodo è dato dall'unità di tempo diviso la frequenza -> $T=1/f$.
+Dunque un segnale con $1Khz$ di frequenza ha periodo di $1/1000$ = 1 millisecondo.
+La **lunghezza d'onda** $\lambda$ mette in relazione frequenza e velocità di trasmissione
+$\lambda = C/f$ dove $C = 300.000 Km/sec$
+
+Lo spettro è l'insieme di frequenze che il segnale contiene.
+La larghezza di banda è l'intervallo delle frequenze contenute in un segnale composto. Se un segnale ad esempio trasmette da 300Hz a 3400Hz la sua larghezza sarà 3100Hz.
+
+### Sviluppo in serie di Fourier
+
