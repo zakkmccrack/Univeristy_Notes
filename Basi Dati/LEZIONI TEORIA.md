@@ -69,3 +69,33 @@ Si dividono in
 
 ##### Controllo della ridondanza
 La ridondanza dei dati crea rischi nella gestione anche se può migliorare le prestazioni. Il DBMS usa quindi una **ridondanza controllata** , e attua verifiche di consistenza dei dati. Queste verifiche vengono stabilite durante la progressione e imposte al DBMS automaticamente.
+#### Divieto di accesso non autorizzato
+Quando più utenti condividono un DB possono esserci informazioni private per ogni utente. Il DBMS fornisce un sottosistema per gestire la sicurezza e autorizzazione usato dal DBA per gestire account e autorizzazioni.
+
+#### Memorizzazione persistente 
+Il DB può venire usato per memorizzare oggetti di programmi.
+Può avvenire un conflitto di impedenza. Certi DB tradizionali hanno strutture dati non compatibili con quelle dei linguaggi di programmazione. Sono nati dunque i DB ad oggetti per essere compatibili con linguaggi come cpp o java.
+Il DBMS esegue in automatico la conversione.
+
+#### Strutture di memorizzazione per l'esecuzione efficiente
+I DBMS forniscono strutture dati ad albero o tabelle hash per ottimizzare l'esecuzione efficiente di interrogazioni. 
+
+#### Backup & Recovery
+Sottosistema di backup del DBMS
+
+#### Interfaccia Utente
+Forniscono varie interfacce
+
+#### Rappresentazione di associazioni fra dati
+Il DBMS deve essere in grado di rappresentare associazioni fra dati
+
+#### Tempo ridotto per lo sviluppo
+
+#### Flessibilità
+
+#### Disponibilità di informazioni aggiornate
+
+#### Economie di scala
+
+
+### Modelli dei Dati
