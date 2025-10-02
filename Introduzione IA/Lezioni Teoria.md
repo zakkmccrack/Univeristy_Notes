@@ -48,3 +48,26 @@ $S -> p1, d3, e9 -> p$ minore
 $p -> d3,e9,q16 -> d$ minore
 $d -> b4,e5,e9,c11,q16-> b$ minore, e9 viene cancellato
 $b -> ...$
+
+### Uniform Cost Search
+Espande il nodo meno costoso per primo.
+Se la soluzione costa $C*$ e gli archi costano almeno $\epsilon$ la profondità effettiva sarà $C*/\epsilon$
+
+
+## General Tree Search
+
+
+## Heuristic Function
+E' una funzione che stima quanto vicini siamo al goal. Al goal deve valere 0.
+
+### Greedy Search 
+Si prende il nodo successivo meno costoso e si va a quello.  Potrebbe succedere che non si arriverà mai al goal.
+
+
+## A*
+Ha come obiettivo di combinare l'UCS e GREEDY.
+- UCS -> orders by path cost
+- Greedy -> orders in goal proximity
+Es.
+![[Pasted image 20251002162649.png]]
+
