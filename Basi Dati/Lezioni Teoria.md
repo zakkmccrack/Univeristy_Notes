@@ -109,7 +109,7 @@ Il DBMS deve essere in grado di rappresentare associazioni fra dati
 Linguaggio procedurale per costruire interrogazioni al DB. E' costituita da operatori unari e binari su istanze di relazioni del DB. 
 - Operatori insiemistici -> UNION, INTERSECTION, DIFF, CART
 - Operatori Relazionali -> Ridenominazione, selezione proiezione, join, divisione
-### Ridenominazione 
+#### Ridenominazione 
 Data un'istanza di relazione $r$, la relazione $R(A1,...An)$
 si ha $\rho S(A1->B1,...,An->Bn)$ la ridenominazione di R con il nome S e gli attributi da $Ai$ in $Bi$
 - $\rho s(r)$ -> rinominazione del solo nome della relazione
@@ -118,16 +118,34 @@ si ha $\rho S(A1->B1,...,An->Bn)$ la ridenominazione di R con il nome S e gli at
 
 #### Unione
 $R(A1,...,An)$ e $S(B1,...,Bm)$ sono compatibili con l'unione se hanno lo stesso grado $(n = m)$ e se $i = 1...n : Dom(Ai) = Dom(Bi)$
-$=>$ $r U s = {t | t e r V t e s }$
-
+$=>$ $r \cup s$ = {$t | t \in r \vee t \in s$}
 
 #### Intersezione
-Contiene le tuple che appartengono sia ad r che ad s.
+Contiene le tuple che appartengono sia ad r che ad s. 
+$=>$ $r \cap s$ = { $t| t \in r \wedge t \in s$ }
 
 #### Differenza
-r \ s
+Contiene le tuple che appartengono all primo insieme e non al secondo
+r\s  = { $t | t \in r \wedge t \notin s$ }
+
+#### Prodotto caretsiano
+r $\times$ s -> tutte le tuple che è possibile ottenere unendo le tuple di r e s
+
+#### Selezione
+Denotata da $\sigma f$,  data R(X) una condizione di selezione su X è una formula che mette insieme i vari connettivi e condizioni atomiche del tipo $A \theta B$ o $A \theta c$ con
+- $\theta$ operatore di confronto { $=, \neq, >, \geq, <, \leq$ }
+- A,B attributi in X
+- c costante compatibile con il dominio di A
+
+#### Proiezione
+Data un'istanza di relazione r su schema R(X) ed un sottoinisme di attributi $Y \subseteq X$ l'operazione $\pi Y(r)$ è definita da:
+$=>$ { $t[Y]  |  t \in r$ }
 
 
-
-
+### Q1
+Donne in gara 
+pi(rho(artista)(nazione = IT, sesso=F))nome
+### Q2
+Artisti polacchi con film in proiezione
+$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$
 
