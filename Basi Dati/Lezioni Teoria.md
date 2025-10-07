@@ -101,3 +101,33 @@ Il DBMS deve essere in grado di rappresentare associazioni fra dati
 
 
 ### Modelli dei Dati
+
+
+//
+
+### Algebra Relazionale 
+Linguaggio procedurale per costruire interrogazioni al DB. E' costituita da operatori unari e binari su istanze di relazioni del DB. 
+- Operatori insiemistici -> UNION, INTERSECTION, DIFF, CART
+- Operatori Relazionali -> Ridenominazione, selezione proiezione, join, divisione
+### Ridenominazione 
+Data un'istanza di relazione $r$, la relazione $R(A1,...An)$
+si ha $\rho S(A1->B1,...,An->Bn)$ la ridenominazione di R con il nome S e gli attributi da $Ai$ in $Bi$
+- $\rho s(r)$ -> rinominazione del solo nome della relazione
+- $\rho A1->B1,...,An->Bn$ -> rinominazione dei soli attributi
+- $S(B1,...,Bn) <- R(A1,...,An)$ -> both
+
+#### Unione
+$R(A1,...,An)$ e $S(B1,...,Bm)$ sono compatibili con l'unione se hanno lo stesso grado $(n = m)$ e se $i = 1...n : Dom(Ai) = Dom(Bi)$
+$=>$ $r U s = {t | t e r V t e s }$
+
+
+#### Intersezione
+Contiene le tuple che appartengono sia ad r che ad s.
+
+#### Differenza
+r \ s
+
+
+
+
+
