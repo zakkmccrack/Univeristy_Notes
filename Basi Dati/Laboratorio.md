@@ -45,5 +45,14 @@ Sintassi del CREATE TABLE:
 Coinvolgono più relazioni tipo ad esempio i vincoli di integrità referenziale o di riferimento.
 
 La SQL definisce due funzioni per definire chiavi esterne:
-- `FOREIGN KEY` ->
-- `REFERENCE` -> 
+- `FOREIGN KEY` -> definizione di chiavi esterne su più attributi
+- `REFERENCE` -> definizione di chiavi esterne su un attributo
+` nome_var_red VARCHAR(x) REFERENCES tabellla(var_tabella)`
+
+# Esercizi
+### Q1
+Donne in gara 
+$\pi(\rho(artista)(nazione = IT, sesso=F))nome$
+### Q2
+Artisti polacchi con film in proiezione
+$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$
