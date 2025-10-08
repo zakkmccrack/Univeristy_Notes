@@ -142,3 +142,12 @@ Data un'istanza di relazione r su schema R(X) ed un sottoinisme di attributi $Y 
 $=>$ { $t[Y]  |  t \in r$ }
 
 
+
+
+# Esercizi
+### Q1
+Donne in gara 
+$\pi(\rho(artista)(nazione = IT, sesso=F))nome$
+### Q2
+Artisti polacchi con film in proiezione
+$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$

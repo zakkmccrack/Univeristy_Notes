@@ -134,12 +134,11 @@ I dati vengono sottoposti a:
 ### Segnali Sinusoidali
 E' un segnale che varia nel tempo secondo la legge $U = U sin (ωt+Φ)$ dove t è il tempo trascorso, ω velocità angolare e Φ lo sfasamento di fase. La curva descritta prende il nome di sinusoide
 ![[Pasted image 20251001125920.png]]
-Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso anti orario con velocita ω. Quindi Φ rappresenta l'angolo che viene formato con l'asse x all'istante 0.
+Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso anti orario con velocita $\omega$. Quindi $\Phi$ rappresenta l'angolo che viene formato con l'asse x all'istante 0.
 
-Ruotando tornerà alla posizione di partenza e si ripeterà. Il numero di volte al secondo che il segnale torna allo stato di partenza, si chiama frequenza e viene calcolata in $Hertz = 1/t$.
+Ruotando tornerà alla posizione di partenza e si ripeterà. Il numero di volte al secondo che il segnale torna allo stato di partenza, si chiama **_FREQUENZA_** e viene calcolata in $Hertz = 1/t$.
 
-Un segnale che ha una frequenza di $1KHz$ vuol dire che percorrerà la circonferenza 1000 volte al secondo. La velocità è data dunque da $2\pi f$. Il periodo che sta nel nel mezzo della ripetizione del segnale si chiama periodo.
-
+Un segnale che ha una frequenza di $1KHz$ vuol dire che percorrerà la circonferenza 1000 volte al secondo. La velocità è data dunque da $2\pi f$. Il periodo che sta nel nel mezzo della ripetizione del segnale si chiama periodo. **$$\omega = 2\pi f$$**
 Un periodo è dato dall'unità di tempo diviso la frequenza -> $T=1/f$.
 Dunque un segnale con $1Khz$ di frequenza ha periodo di $1/1000$ = 1 millisecondo.
 La **lunghezza d'onda** $\lambda$ mette in relazione frequenza e velocità di trasmissione
@@ -149,4 +148,55 @@ Lo spettro è l'insieme di frequenze che il segnale contiene.
 La larghezza di banda è l'intervallo delle frequenze contenute in un segnale composto. Se un segnale ad esempio trasmette da 300Hz a 3400Hz la sua larghezza sarà 3100Hz.
 
 ### Sviluppo in serie di Fourier
+Il teorema di Fourier ci dice che un segnale periodico può essere considerato come la somma di infinite sinusoidi diverse.
+Matematicamente: $S(t) = A0+A1sen(ωt+φ1)+A2sen(2ωt+φ2)+A3sen(3ωt+φ3)+…$
 
+![[Pasted image 20251008181607.png]]
+![[Pasted image 20251008181631.png]]
+
+Utilizzando sempre più segnali sinusoidali diversi e opportuni, il segnale ricostruito in giallo è sempre più tendente ad una forma quadrata. Questo si ha passando da un'analisi dalla 3 alla 9 armonica. Il numero di armoniche usate per la ricostruzione di un segnale varia in base alla potenza del segnale da rappresentare. In genere si considera l'armonica sino a che la sua ampiezza non sia $1/10$ della grandezza originale.
+
+L'analisi di Fourier ci ricorda che un segnale digitale è un segnale analogico composto da banda teoricamente infinita. Nasce il problema di come trasmettere il segnale analogico come digitale tra 2 punti.
+
+### Filtri
+Sistema che tratta in modo specifico le componenti di un segnale a frequenze diverse. Aiuta a separare le informazioni o eliminare il disturbo.
+I filtri attivi usano amplificatori operazionali o transistori, quelli passivi usano componenti come resistori o condensatori.
+#### Filtro passa basso
+Permette il passaggio di frequenze sotto una certa soglia, chiamata frequenza di taglio. In questa sussiste la relazione $: V_{out} / V_{in} = 1/(2)^{1/2}$ dove  $V_{out}$ è il segnale in uscita e $V_{in}$ quello in entrata.
+Così è attenuato circa di un 30%.
+
+#### Filtro passa alto
+Permette il passaggio di frequenze al di sopra della frequenza di taglio.
+
+#### Filtro passa banda
+Permette il passaggio di frequenze all'interno di un certo range detto *banda passante* e attenua quelle fuori da questo range.
+
+#### Filtro elimina banda o filtro notch
+Blocca un certo intervallo di frequenze $\omega_L - \omega_H$
+
+
+### Modulazione di un segnale
+Il DTE sorgente immette nel canale un segnale digitale con distribuzione di energia troppo ampia per poter stare dentro un canale telefonico, deve quindi essere convertita.
+La modulazione è un'operazione secondo la quale un segnale **_portante_** viene modificato in un parametro essenziale in accordo al segnale informativo d'ingresso, **_modulante_**.
+
+
+### Modulazione ad onda continua
+Ha 3 tipi di modulazione analogica:
+#### AM (Amplitude) -> modulazione di ampiezza.
+Sistema per il quale si modula l'ampiezza del segnale che si deve trasmettere **_portante_** in maniera proporzionale al segnale che si intende trasmettere, **_modulante_**
+Così il segnale modulato ha la stessa frequenza del segnale portante.
+In digitale lo 0 è bassa potenze e l'1 alta potenza.
+Trasmettendo un segnale modulante del tipo $v_m(t) = v_m cos(\omega_m t + \Phi)$ ponendo $\Phi = 0$.
+Sia la portante $v_p(t) = v_p cos(\omega_p t)$ con frequenza maggiore, il segnale modulato in ampiezza diventa:
+$v(t) = [V_p + KaV_m cos(\omega_m t)]cos(\omega_p t)$
+
+![[Pasted image 20251008191015.png]]
+
+#### FM (Frequency) -> modulazione di frequenza
+Nella AM il rumore che cade nella banda del segnale si somma, degradando così il contenuto informativo. Nella modulazione di frequenza l'ampiezza resta standard, ma cambia la frequenza del segnale. Più l'onda modulante aumenta più l'onda si infittisce. Ha un'efficienza maggiore e risente meno dei disturbi, ma è più complessa da costruire.
+La pulsazione della portante varia di frequenza, proporzionalmente al valore della modulante, lasciando l'ampiezza $V_p$ inalterata.
+$v_m(t) = V_Msen\omega_mt$
+$v_p(t) = V_p sen(\omega_p t + m_f sen\omega_m t)$ 
+con $m_f = (K_f V_M)/\omega_m = (K_f V_M)/2\pi f_m = \Delta f/f_m$
+![[Pasted image 20251008200217.png]]
+#### PM (Phase) -> modulazione di fase

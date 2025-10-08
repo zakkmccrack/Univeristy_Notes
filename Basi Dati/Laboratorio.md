@@ -49,10 +49,22 @@ La SQL definisce due funzioni per definire chiavi esterne:
 - `REFERENCE` -> definizione di chiavi esterne su un attributo
 ` nome_var_red VARCHAR(x) REFERENCES tabellla(var_tabella)`
 
-# Esercizi
-### Q1
-Donne in gara 
-$\pi(\rho(artista)(nazione = IT, sesso=F))nome$
-### Q2
-Artisti polacchi con film in proiezione
-$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$
+Possono anche essere costruite insieme quando vi è un vincolo su un insieme di attributi
+```
+FOREIGN KEY(nome,cognome) REFERENCES anagrafica(nome, cognome)
+```
+
+# PostgreSQL
+Sistema per gestione di basi di dati relazionali ad oggetti.
+Si esegue in linea di comando con `psql` e la connessione con li server avviene con `psql -U <nome_utente> -h <hostname> <database>`
+[documentazione completa comandi](https://www.postgresql.org/docs/current/app-psql.html)
+
+### Domini in PostgreSQL
+```
+CHAR(n) -> lunghezza fissa
+VARCHAR(n) -> lunghezza variabile con massimo
+TEXT = VARCHAR -> lunghezza senza limite
+BIGINT a 8 byte
+FLOAT(1-24) -> real
+FLOAT(25-53) -> double precision
+```
