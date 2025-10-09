@@ -57,17 +57,25 @@ Se la soluzione costa $C*$ e gli archi costano almeno $\epsilon$ la profondità 
 ## General Tree Search
 
 
+
 ## Heuristic Function
 E' una funzione che stima quanto vicini siamo al goal. Al goal deve valere 0.
 
 ### Greedy Search 
 Si prende il nodo successivo meno costoso e si va a quello.  Potrebbe succedere che non si arriverà mai al goal.
 
-
 ## A*
 Ha come obiettivo di combinare l'UCS e GREEDY.
 - UCS -> orders by path cost
 - Greedy -> orders in goal proximity
-Es.
-![[Pasted image 20251002162649.png]]
 
+![[attachments/Pasted image 20251009154403.png]]
+
+### Admissible Heuristic
+E' inammissibile se l'euristica pecca di ottimalità, togliendo path migliori, quindi se sovrastima i percorsi. Quella ammissibile non sovrastima mai.
+Ma quella inammissibile non è sempre da buttare. Ogni tanto potrebbe essere utile un'euristica sovrastimante visto che porta ad una ad una soluzione più velocemente di un'euristica ammissibile.
+Quindi la cosa migliore è capire quale euristica è utile in un certo contesto.
+
+h è ammissibile se: $0 <= h(n) < h*(n)$ dove h*(n) è il costo vero.
+
+! date h1, h2 2 euristiche ammissibili -> h(x) = max(h1, h2) è ammissibile

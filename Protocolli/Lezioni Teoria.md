@@ -134,11 +134,17 @@ I dati vengono sottoposti a:
 ### Segnali Sinusoidali
 E' un segnale che varia nel tempo secondo la legge $U = U sin (ωt+Φ)$ dove t è il tempo trascorso, ω velocità angolare e Φ lo sfasamento di fase. La curva descritta prende il nome di sinusoide
 ![[Pasted image 20251001125920.png]]
-Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso anti orario con velocita $\omega$. Quindi $\Phi$ rappresenta l'angolo che viene formato con l'asse x all'istante 0.
+Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso anti orario con velocità $\omega$. Quindi $\Phi$ rappresenta l'angolo che viene formato con l'asse x all'istante 0.
 
 Ruotando tornerà alla posizione di partenza e si ripeterà. Il numero di volte al secondo che il segnale torna allo stato di partenza, si chiama **_FREQUENZA_** e viene calcolata in $Hertz = 1/t$.
 
 Un segnale che ha una frequenza di $1KHz$ vuol dire che percorrerà la circonferenza 1000 volte al secondo. La velocità è data dunque da $2\pi f$. Il periodo che sta nel nel mezzo della ripetizione del segnale si chiama periodo. **$$\omega = 2\pi f$$**
+Dunque un'onda portante sinusoidale ha forma del tipo:
+$$
+s(t) = A cos (2\pi f t+ \Phi) = Asin(\omega t + \Phi + \pi/2)
+$$
+con A ampiezza della portante, f frequenza e Φ fase
+
 Un periodo è dato dall'unità di tempo diviso la frequenza -> $T=1/f$.
 Dunque un segnale con $1Khz$ di frequenza ha periodo di $1/1000$ = 1 millisecondo.
 La **lunghezza d'onda** $\lambda$ mette in relazione frequenza e velocità di trasmissione
@@ -151,8 +157,8 @@ La larghezza di banda è l'intervallo delle frequenze contenute in un segnale co
 Il teorema di Fourier ci dice che un segnale periodico può essere considerato come la somma di infinite sinusoidi diverse.
 Matematicamente: $S(t) = A0+A1sen(ωt+φ1)+A2sen(2ωt+φ2)+A3sen(3ωt+φ3)+…$
 
-![[Pasted image 20251008181607.png]]
-![[Pasted image 20251008181631.png]]
+![[attachments/Pasted image 20251009111349.png]]
+![[attachments/Pasted image 20251009111407.png]]
 
 Utilizzando sempre più segnali sinusoidali diversi e opportuni, il segnale ricostruito in giallo è sempre più tendente ad una forma quadrata. Questo si ha passando da un'analisi dalla 3 alla 9 armonica. Il numero di armoniche usate per la ricostruzione di un segnale varia in base alla potenza del segnale da rappresentare. In genere si considera l'armonica sino a che la sua ampiezza non sia $1/10$ della grandezza originale.
 
@@ -190,7 +196,7 @@ Trasmettendo un segnale modulante del tipo $v_m(t) = v_m cos(\omega_m t + \Phi)$
 Sia la portante $v_p(t) = v_p cos(\omega_p t)$ con frequenza maggiore, il segnale modulato in ampiezza diventa:
 $v(t) = [V_p + KaV_m cos(\omega_m t)]cos(\omega_p t)$
 
-![[Pasted image 20251008191015.png]]
+![[attachments/Pasted image 20251009111429.png]]
 
 #### FM (Frequency) -> modulazione di frequenza
 Nella AM il rumore che cade nella banda del segnale si somma, degradando così il contenuto informativo. Nella modulazione di frequenza l'ampiezza resta standard, ma cambia la frequenza del segnale. Più l'onda modulante aumenta più l'onda si infittisce. Ha un'efficienza maggiore e risente meno dei disturbi, ma è più complessa da costruire.
@@ -198,5 +204,85 @@ La pulsazione della portante varia di frequenza, proporzionalmente al valore del
 $v_m(t) = V_Msen\omega_mt$
 $v_p(t) = V_p sen(\omega_p t + m_f sen\omega_m t)$ 
 con $m_f = (K_f V_M)/\omega_m = (K_f V_M)/2\pi f_m = \Delta f/f_m$
-![[Pasted image 20251008200217.png]]
+
+![[attachments/Pasted image 20251009111450.png]]
 #### PM (Phase) -> modulazione di fase
+Simile alla modulazione di frequenza, ma la frequenza del segnale portante è più stabile. Viene spesso usato per amplificare il segnale di sistemi di frequenza.
+Si fa variare la fase della portante in modo direttamente proporzionale all'ampiezza modulante .
+ $V_{PM}(T) = V_P cos(\omega_P t + K_p V_m sin\omega_p t)$
+ ![[attachments/Pasted image 20251009112936.png]]
+
+
+### Modulazione Impulsiva
+E' un tipo di modulazione dove l'informazione è codificata in una serie di impulsi.
+
+#### PAM (pulse amplitude modulation)
+il segnale analogico varia l'ampiezza del treno di impulsi che costituisce la portante.
+![[attachments/Pasted image 20251009113341.png]]
+
+#### PWM (pulse width modulation)
+l'informazione è codificata sotto forma di durata temporale degli impulsi di un segnale. Il modulante varia la larghezza degli impulsi.
+![[attachments/Pasted image 20251009113734.png]]
+
+#### PPM (pulse position modulation)
+le ampiezze degli impulsi sono identiche, ma la loro posizione viene modificata in base al segnale della modulante. Più il segnale è positivo più viene ritardata la posizione degli impulsi rispetto a quella di riposo e viceversa.
+![[attachments/Pasted image 20251009113858.png]]
+
+#### PCM (pulse code modulation)
+Si applica a canali telefonici e permette di fare passare su un solo cavo coassiale fino a 30 telefonate.
+
+### PCM (pule code modulation)
+Per la sua realizzazione si effettuano 3 operazione a partire dal microfono di ingresso
+#### Campionamento
+teorema di Shannon: un segnale a banda limitata compreso tra due frequenze $f_1$ e  $f_2$ | $f_2>f_1$ può essere rappresentato mediante una successione di campioni prelevati con frequenza pari a $2f_2$.
+Si assume come frequenza di campionamento il valore $f_c = 8KHz$ superiore di $1,2 KHz$ al valore minimo di $2f_2 = 6,8 KHz$.
+Il periodo sarà dunque $T = 1/f_c = 1/8000 = 125\mu sec$
+
+Si definisce frequenza di Nyquist la minima frequenza necessaria per campionare senza perdere informazione. La minima frequenza è pari al doppio della banda.
+Il segnale viene quindi prima campionato poi sostituito dalla frequenza PAM.
+#### Quantizzazione
+Il dato per essere trasmesso deve assumere solo determinati valori discreti e finiti.
+Si definisce prima un massimo e un minimo e si divide l'intervallo creato.
+Nella quantizzazione uniforme ogni sotto intervallo è uguale ad ogni altro sotto intervallo.
+Dato $n$ il numero di bit usati:
+- il numero di livelli sarà $M=2^n$
+- l'ampiezza $q = V_{pp}/M$
+- la varianza $q^2 /12$
+Essendo la quantizzazione irreversibile, occorre tener conto dell'errore di quantizzazione, nato dal fatto che il segnale vocale può avere infiniti valori mentre la sua discretizzazione no.
+E' provato che usando 256 livelli l'orecchio umano non percepisce differenza.
+#### Codifica
+L'ampiezza degli impulsi viene trasformata in bit. 
+Ad esempio se l'ampiezza iniziale del primo impulso è di 5V, sarà rappresentata dalla sequenza binaria 101. 
+
+Esempio: vengono spediti 96 impulsi. Il n.0, n.32 e n.64 saranno da vedersi consequenziali come il 5,37,69. Di questi 32 impulsi il n.0 server per dettare il sincronismo, il 16 per il controllo della bontà di trasmissione.
+In totale di 30 canali vocali, 2 sono di servizio.
+Vengono trasmessi 32 canali con 8000 campioni al secondo. Ogni canale contiene 8 bit, quindi al secondo vengono trasmessi
+$V_{bit} = 32*8000*8 = 2048Mbit/s$
+
+Si possono raggruppare più canali.
+
+### Modulazioni digitali
+Tecniche che modulano segnali digitali, ossia 0 e 1 o -1 e +1.
+#### Modulazione per modem di banda base
+per il collegamento tra 2 DTE si parla di codifica volta ad eliminare segnali di bassa frequenza e segnali in componente continua.
+Il digitale rimane lo stesso, ma vengono fatte delle modifiche alla portante rispetto al modulante.
+
+#### ASK (amplitude shift keying)
+La modulazione a  spostamento d'ampiezza trasmette i bit modificando l'ampiezza della portante.
+$$
+\begin{cases}
+Acos(2\pi f t) \ \ \ \ \ bit=1
+\\
+0 \ \ \ \ \ \ bit = 0
+\end{cases}
+$$
+Semplice ma sensibile al rumore
+#### FSK (frequency shift keying)
+Modulazione per spostamento di frequenza. I bit vengono trasmessi variando la frequenza della portante mantenendo ampiezza e fase costanti
+Più robusta di ASK ma richiede banda maggiore
+#### PSK (phase shift)
+Si trasmettono i bit modificando la fase portante, mantenendo ampiezza e frequenza costanti. Molto robusta ma può causare discontinuità
+#### BPSK (BiPolar Phase shift)
+E' la forma 
+#### DPSK (differential phase shift)
+#### QAM ( quadrature amplitude modulation)

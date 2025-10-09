@@ -140,14 +140,3 @@ Denotata da $\sigma f$,  data R(X) una condizione di selezione su X è una formu
 #### Proiezione
 Data un'istanza di relazione r su schema R(X) ed un sottoinisme di attributi $Y \subseteq X$ l'operazione $\pi Y(r)$ è definita da:
 $=>$ { $t[Y]  |  t \in r$ }
-
-
-
-
-# Esercizi
-### Q1
-Donne in gara 
-$\pi(\rho(artista)(nazione = IT, sesso=F))nome$
-### Q2
-Artisti polacchi con film in proiezione
-$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$

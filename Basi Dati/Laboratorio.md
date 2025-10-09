@@ -68,3 +68,36 @@ BIGINT a 8 byte
 FLOAT(1-24) -> real
 FLOAT(25-53) -> double precision
 ```
+
+
+
+
+# Esercizi
+### Q1
+Donne in gara 
+$\pi(\sigma(artista)(nazione = IT, sesso=F))nome$
+### Q2
+Artisti polacchi con film in proiezione
+$\sigma(\sigma[(artista)x(film)](nome=regista)=(nazione=POL)$
+
+
+## Esercizi
+
+- reparto (nome, ubicazione, primario) nome PK, primario FK da medico
+- stanza (numero, reparto) numero_reparto PK, reparto FK da reparto
+- letto (numero, stanza, reparto) numero_stanza_reparto PK, stanza e reparto FK da stanza
+- medico (codice_f, nome, cognome, reparto) codice_f PK, reparto FK da reparto
+- paziente (tessera_sanitaria, codice_f, nome, sesso) tessera_sanitaria PK
+- ricovero (paziente, data_ammissione, dimissione) paziente_ammissione PK, paziente FK da paziente
+- degenza (paziente, data_ammissione, data_inizio, data_fine, letto, stanza, reparto) paziente_data_ammissione_data_inizio PK, paziente e ammissione FK da ricovero, letto stanza reparto FK da letto
+
+---
+
+Si assuma che in ogni reparto le stanze vengano numerate in valore progressivo (dalla prima all'ultima) così come ogni letto in ogni stanza.
+
+1) determinare tutti i primari della stessa struttura ospedaliera -> $\pi_{nome,cognome}(\sigma(medico x reparto))$
+   
+2) determinare medici anche pazienti -> $\pi(\sigma_{medico.codice\_f = paziente.codice\_f}(medico x paziente))$ oppure $\pi_{codice\_f}(medico) \cap \pi_{codice\_f}(paziente)$
+3) medici che non sono primari alcun reparto della struttura ospedaliera -> // medici che sono primari  $primari <= \pi(\sigma_{primario = codice\_f}(reparto x medico))$ 
+4) medici che lavorano in un reparto diretto da un primario di nome Mario Rossi -> // reparti diretti da Mario Rossi $reparto\_di\_mario = \pi_{reparto.nome}(\sigma_{primario = codice\_f, medico.nome=Mario, medico.cognome=Rossi}(reparto x medico))$ $medici\_da\_rossi = \sigma_{medico.reparto = reparto\_di\_mario.nome}(medicoxreparto\_di\_mario)$
+5) 
