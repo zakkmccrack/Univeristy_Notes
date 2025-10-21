@@ -14,6 +14,7 @@ Il nodo rappresenta la struttura dati dell'albero mentre lo stato sta all'intern
 ### DFS (Depth First Search)
 Espandere prima il nodo più profondo, perché la frontiera è implementata come stack. Infatti è uno stack LIFO
 Esempio
+
 ![dfs_graph.png](attachments/dfs_graph.png)
 
 Partendo da S:
@@ -21,7 +22,7 @@ $S -> d, e, p$ = Frontiera in ordine
 LIFO -> prossimo nodo da espandere -> p
 $p -> d, e, q -> q$ prossimo nodo da espandere
 $q -> d,e -> e$ prossimo nodo da espandere
-$e -> d, h, r -> r$ prossimo nodo da espandere
+$e -> d, h, r -> r$ prossimo nodo da espandere  
 ### Proprietà dell'algoritmo di ricerca
 - Completezza
 - Ottimale
