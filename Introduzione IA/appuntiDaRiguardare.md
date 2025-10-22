@@ -1,4 +1,4 @@
-# Intelligenza Artificiale Teoria1
+# Intelligenza Artificiale Teoria
 
 ## Agenti Intelligenti
 
@@ -144,7 +144,7 @@ Le 4 che vengono prese in considerazione sono:
 * **Complessità in spazio**: la memoria utilizzata pe l'esecuzione dell'algoritmo.
 
 
-### Spazzio degli stati infinito
+### Spazio degli stati infiniti
 
 Quando lo spazio degli stati è finito non ci sono grandi problemi per la ricerca di una soluzione. Qunando invece si tratta di uno spazio degli stati infinito, la ricerca deve essere fatta **sistematicamente** per evitare di applicare sempre la stessa azione e non tornare mai indietro per controllare stati vicini allo stato iniziale.
 
@@ -251,7 +251,7 @@ A questa famiglia di ricerca appartengono:
 * **Best First Search** (Dijisktra) <!-- ricordarsi che Jhonson fa un pompino a Dijkstra -->
 * **Depth First Search**
 * **Depth Limited Search**
-* **Iterative Deeeeeeepening Search**
+* **Iterative Deeping Search**
 
 #### Breadth Firs Search
 
@@ -266,7 +266,7 @@ Nell'implementazione è possibile migliorarlo alterando alcuni aspetti della Bes
 * E' possibile effettuare un **early goal test** poichè, una volta trovato un cammino, saremo sicuri che non ci saranno altri cammini migliori per raggiungere quel nodo
 
 Questo algoritmo è **Completo** e **Ottimo**.<br>
-Ha una complessità in **tempo** e **spazio** equvalenti che sono: ![O(b^d)](./imgs/o_b_d.gif)
+Ha una complessità in **tempo** e **spazio** equvalenti che sono: $O(b^d)$
 
 Quando lo spazio delle soluzioni è molto ampio e si ha un brancing factor elevato, non è possibile applicare algoritmi di ricerca non informati poichè si va in contro a limitazioni fisiche di memoria e, anche ipotizzando una memoria infinita, si raggiungono tempi di esecuzione impraticabile (per uno stato goal con d = 14 e b = 10 il tempo di esecuzione richiesto sarebbe di 3.5 anni)
 
@@ -310,7 +310,7 @@ function breadthFirstSearch(problem) {
 }
 ```
 
-#### Algoritmo di Dijstra o Uniform Cost Search
+#### Algoritmo di Dijkstra o Uniform Cost Search
 
 Questo algoritmo, a differenza della breadth first serach che espande i nodi in base alla profondità, espande i nodi in base al costo del cammino totale: guarda prima i commini con lo stesso costo.<br>
 Non si espande nodo in nodo ma cammino in cammino.
@@ -408,7 +408,7 @@ _Il **diametro** di un grafo è il cammino più lungo che collega 2 nodi senza c
 
 **Iterative Deepening Search**
 
-Questo algoritmo risolve il problema di scegliere un buon valore per il limite `l`: prova tutti i limiti possibili (**_EZ OMG MILANI CONFIRMED!_**).<br>
+Questo algoritmo risolve il problema di scegliere un buon valore per il limite `l`: prova tutti i limiti possibili<br>
 Combina i benefici della Depth First Search e della Bredth First Serach:
 
 * la memoria richiesta è modesta: ![o b d](./imgs/o_bd.gif) se c'è una soluzione, altrimenti è ![o b m](./imgs/o_b_m.gif)
@@ -434,7 +434,7 @@ _Esempio di funzionamento della IDS_
 
 #### Comparazione tra algoritmi di ricerca non informati
 
-|Criterio|Bredth First|Uniform Cost|Depth First|Depth Limited|Iterative Deepnening|Bidirectional (gay)|
+|Criterio|Bredth First|Uniform Cost|Depth First|Depth Limited|Iterative Deepnening|Bidirectional|
 |:------:|:----------:|:----------:|:---------:|:-----------:|:------------------:|:-----------------:|
 |**Completo?**|SI|SI|NO|NO|SI|SI|
 |**Ottimale?**|SI|SI|NO|NO|SI|SI|
@@ -473,7 +473,7 @@ Il risultato di questa somma corrisponde al cammino di costo minimo che permette
 A* è un algoritmo completo ma la sua ottimalità in costo dipende da alcune proprietà dell'euristica:
 
 * **Ammissibilità**: capacità dell'euristica di non sovrastimare mai il costo per raggiungere il goal (l'euristica è _ottimistica_).
-* **Consistentza** (_So Ssodo !_): la capacità dell'euristica di mantenere sensate le sue previsioni, ovvero l'euristica per raggiungere un nodo, deve essere minore o uguale alla somma tra un nuovo cammino figlio del nodo di partenza e l'euristica del nuovo nodo (la distanza in line d'aria del punto di partenza è il valore minimo per raggiungere il goal e quindi aggiungendo altri percorsi non si potrà fare meglio). Viene chiamata regola dell'**inequità del triangolo**.
+* **Consistentza**: la capacità dell'euristica di mantenere sensate le sue previsioni, ovvero l'euristica per raggiungere un nodo, deve essere minore o uguale alla somma tra un nuovo cammino figlio del nodo di partenza e l'euristica del nuovo nodo (la distanza in line d'aria del punto di partenza è il valore minimo per raggiungere il goal e quindi aggiungendo altri percorsi non si potrà fare meglio). Viene chiamata regola dell'**inequità del triangolo**.
 ![inequita](./imgs/inequita.png)
 
 Un eurisitica consistente è sempre ammissibile, ma non è detto il contrario.<br>
