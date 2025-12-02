@@ -287,7 +287,7 @@ dove:
 
 La curva descritta prende il nome di **sinusoide**.
 
-![Segnali Sinusoidali](attachments/segnali_sinusoidali.png)
+![Segnali Sinusoidali](images/segnali_sinusoidali.png)
 
 Questa curva rappresenta il valore del seno dell'angolo istante per istante che ruota in senso antiorario con velocità **ω**. Quindi **Φ** rappresenta l'angolo che viene formato con l'asse x all'istante 0.
 
@@ -329,9 +329,9 @@ Matematicamente:
 
 **S(t) = A₀ + A₁ sin(ωt + φ₁) + A₂ sin(2ωt + φ₂) + A₃ sin(3ωt + φ₃) + ...**
 
-![Fourier Terza Armonica](attachments/fourier_terza.png)
+![Fourier Terza Armonica](images/fourier_terza.png)
 
-![Fourier Nona Armonica](attachments/fourier_nona.png)
+![Fourier Nona Armonica](images/fourier_nona.png)
 
 Utilizzando sempre più segnali sinusoidali diversi e opportuni, il segnale ricostruito in giallo è sempre più tendente ad una forma quadrata. Questo si ha passando da un'analisi dalla 3ª alla 9ª armonica. Il numero di armoniche usate per la ricostruzione di un segnale varia in base alla potenza del segnale da rappresentare. In genere si considera l'armonica sino a che la sua ampiezza non sia **1/10** della grandezza originale.
 
@@ -393,7 +393,7 @@ Sia la portante **vp(t) = vp cos(ωpt)** con frequenza maggiore, il segnale modu
 
 **v(t) = [Vp + KaVm cos(ωmt)] cos(ωpt)**
 
-![Modulazioni](attachments/modulazioni.png)
+![Modulazioni](images/modulazioni.png)
 
 #### **FM (Frequency) - Modulazione di Frequenza**
 
@@ -437,19 +437,19 @@ Si fa variare la fase della portante in modo direttamente proporzionale all'ampi
 
 Il segnale analogico varia l'ampiezza del treno di impulsi che costituisce la portante.
 
-![PAM](attachments/pam.png)
+![PAM](images/pam.png)
 
 #### **PWM (Pulse Width Modulation)**
 
 L'informazione è codificata sotto forma di durata temporale degli impulsi di un segnale. Il modulante varia la larghezza degli impulsi.
 
-![PWM](attachments/pwm.png)
+![PWM](images/pwm.png)
 
 #### **PPM (Pulse Position Modulation)**
 
 Le ampiezze degli impulsi sono identiche, ma la loro posizione viene modificata in base al segnale della modulante. Più il segnale è positivo più viene ritardata la posizione degli impulsi rispetto a quella di riposo e viceversa.
 
-![PPM](attachments/ppm.png)
+![PPM](images/ppm.png)
 
 #### **PCM (Pulse Code Modulation)**
 
@@ -549,7 +549,7 @@ Quindi, l'onda "invertirà" il segnale quando vi sarà un valore 0, mentre per v
 
 Modulazione digitale a 4 fasi. I bit vengono riuniti in coppie usate per modulare in fase la portante sinusoidale (dibit).
 
-![4-PSK](attachments/4psk.png)
+![4-PSK](images/4psk.png)
 
 I due bit generano due flussi separati meno veloci di quello originale.
 
@@ -565,7 +565,7 @@ Al blocco di separazione è applicato in ingresso il segnale modulante **Vi** ch
 
 Inoltre il separatore associa allo stato logico basso +1, mentre a quello alto -1, così da avere un segnale in fase (livello basso) o sfasato di 180° (livello alto) all'uscita del moltiplicatore.
 
-![Schema 4-PSK](attachments/4psk_schema.png)
+![Schema 4-PSK](images/4psk_schema.png)
 
 ---
 
@@ -587,7 +587,7 @@ Differenza tra il punto teorico e il punto reale.
 
 Può essere descritto caratterizzato dal suo modulo e dalla sua fase.
 
-![Vettore Errore](attachments/vettore_errore.png)
+![Vettore Errore](images/vettore_errore.png)
 
 I vettori errore descrivono quanto "balla" il segnale ricevuto nei dintorni del punto teorico.
 
@@ -608,9 +608,13 @@ Può essere calcolato anche come rapporto espresso in dB tra valore quadratico m
 Essendo valori piccoli il rapporto espresso in dB assume valori estremamente piccoli. Tanto più negativi quanto migliore il segnale.
 
 > Un valore EVM% di **0,10 (10%)** rappresenta un segnale peggiore rispetto ad un altro con EVM% di \*\*0
-------------------------------------------------------------
+
+---
+
 # Da qui in poi claude ancora non me lo ha impostato per bene :)
-------------------------------------------------------------
+
+---
+
 > Il Bel è definito come logaritmo del rapporto tra grandezza X e il suo valore di riferimento $X_0$.
 > 1 Decibel è pari ad 1/10 di Bel. Il decibel relativo ad una grandezza X generica viene espresso nella forma $dB_x = 10log(X/X_0)$.
 
@@ -638,7 +642,7 @@ Un segnale DPSK ha lo stesso andamento di un PSK quindi ha le stesse caratterist
 Si può anche associare la codifica dei due bit con
 $01=90°, 10=180°, 11=-90°$ o $270$
 
-![alt text](attachments/codifica_diff_dpsk.png)
+![alt text](images/codifica_diff_dpsk.png)
 
 ### Modulazione QAM
 
@@ -652,15 +656,15 @@ Dati divisi in gruppi da 4bit (quadribit). Si varia la fase della portante con l
 Il primo bit si usa per operare una modulazione di ampiezza sul segnale già modulato in fase
 Così si ottengono $2^3=8$ salti di fase, ad ognuno associata un ampiezza corrispondente all'uno o allo zero logico del primo bit.
 
-![alt text](attachments/ampiezze_relative16QAM.png)
+![alt text](images/ampiezze_relative16QAM.png)
 
-![alt text](attachments/immagini_16QAM.png)
+![alt text](images/immagini_16QAM.png)
 
 ### Modulazione 64-QAM
 
 Modulazione anch'essa bidimensionale, data dalla combinazione di due PAM modulate con portanti seno e coseno
 
-![alt text](attachments/64-QAM.png)
+![alt text](images/64-QAM.png)
 
 ### Codifica Trellis
 
@@ -668,7 +672,7 @@ Modulazione anch'essa bidimensionale, data dalla combinazione di due PAM modulat
 Rappresentata da una macchina con due stati e associati al valore -A (S0) o +A (S1) (supponendo ci sia un segnale PAM visto che qui i simboli sono rappresentati da livelli di ampiezza).
 Il bit 0 non fa cambiare di stato mentre il bit 1 si.
 
-![alt text](attachments/trellis.png)
+![alt text](images/trellis.png)
 
 ## Alterazione del segnale
 
@@ -699,7 +703,7 @@ Spesso si usa il rappporto segnale/rumore _SNR_ o _S/N_
 $SNR = P_{segnale}/P_{rumore}$
 Questo rapporto se da come risultato 28dB sei dio, da 7-10dB, anche qui, si consiglia il suicidio.
 
-![alt text](attachments/dist_rum.png)
+![alt text](images/dist_rum.png)
 
 ### Interferenza
 
@@ -727,7 +731,7 @@ Con B sempre larghezza di banda, S potenza del segnale e N potenza del rumore.
 
 Con la prima formula ci si ricava il numero opprtuno di livelli V da usare, con la seconda il Max Data Rate reale.
 
-![alt text](attachments/esempioRumore.png)
+![alt text](images/esempioRumore.png)
 
 # PDF_8
 
@@ -792,14 +796,14 @@ Il clock ha frequenza doppia per ridurre al 50% la durata dell'impulso.
 Il ricevitore distingue tra 3 livelli.
 C'è più rischio di errore, ma lunghe stringhe non rischiano di fare perdere il sincronismo.
 
-![alt text](attachments/rz.png)
+![alt text](images/rz.png)
 
 ### Manchester
 
 Divide in 2 parti ugali il periodo di cifratura associando allo 0 logico la transizione dal basso verso l'altro a metà del bit e all'1 logico una transizione dall'alto verso il basso a metà del bit. Raddoppia la banda necessaria. Usata nelle LAN.
 Richiede un circuito complicato.
 
-![alt text](attachments/manchester.png)
+![alt text](images/manchester.png)
 
 ### AMI (Alternate Mark Inversion)
 
@@ -818,7 +822,7 @@ Aiuta a mantenere costante il segnale.
 Usata principalmente in contenuti testuali.
 In assenza di start e stop bit si usa un sequenza di caratteri SYN che avviano il sincronismo di bit, individuando i confini di carattere.
 
-![alt text](attachments/syn_caratteri.png)
+![alt text](images/syn_caratteri.png)
 
 Se l'ETX può venire simulato da dati qualunque nel pacchetto, si usa un DLE (Data Link Escape), un carattere di contrllo che all'interno dei dati esegue il byte stuffing, sostituendo gli eventuali ETX.
 Per byte stuffing si intende aggiungere uno 0 ogni cinque 1 consecutivi.
@@ -828,7 +832,7 @@ Per byte stuffing si intende aggiungere uno 0 ogni cinque 1 consecutivi.
 Dati non organizzati in caratteri, riducendo così l'inefficienza legata ai caratteri di controllo ed evitare dipendenza da caratteri.
 Quindi non impiega caratteri di SYN o STX ma degli idle bytes o flag bytes per indicare fine ed inizio di trama.
 
-![alt text](attachments/byte_trasmission.png)
+![alt text](images/byte_trasmission.png)
 
 ### Controllo degli errori
 
@@ -853,22 +857,187 @@ Facile da implementare ma ha diversi limiti. Se c'è un'inversione dei bit pari,
 Come nel VRC si ha un bit di parità per ogni unità di dati, ma ad ogni blocco viene aggiunt unaa unità supplementare che contiene i bit di parità associati alle sequenze di bit corrispondenti. Assicura maggiore affidabilità ma può essere tratto ancora in inganno da trasposizioni di byte.
 
 #### CRC (Controllo di Ridondanza Ciclica)
+
 Orientato ai bit, asssocia ogni sequenza di k bit ai coefficienti di un polinomio di grado k-1
 
-![alt text](attachments/crc_bit.png)
+![alt text](images/crc_bit.png)
 
 Viene associato ad ogni sequenza un checksum tale che il polinomio generato dalla sequenza sia divisibile per G(x), polinoimo conosciuto a priori da ricevitore e mittente.
 Un checksum si calcoloca così:
-1) aggiunngo r bit 0 al segmento ottentendo una sequente m+r di bit corrispondente al polinomio $x^rx M(x)$ con r gradi di G(x) e M(x) polinomio corrispondente alla sequenza iniziale.
-2) divido $x^rx M(x)$ per G(x) con divisione mod 2 
 
-![alt text](attachments/mod2division.png)
+1. aggiunngo r bit 0 al segmento ottentendo una sequente m+r di bit corrispondente al polinomio $x^rx M(x)$ con r gradi di G(x) e M(x) polinomio corrispondente alla sequenza iniziale.
+2. divido $x^rx M(x)$ per G(x) con divisione mod 2
+
+![alt text](images/mod2division.png)
 R(x) è il polinomio corrispondente al checksum.
 
 3)sommo R(x) a $x^rx M(x)$ ottenendo il segmento da trasmettere con checksum.
 
+Non tutti i polinomi G(x) sono adatti allo scopo visto che può avvenire una collisione tra due checksum di sequenze diverse.
+Alcuni suggerimenti per G(x)
+
+- con polinomi aventi $x^0 = 1$ gli errori pari ad un bit osno sempre rilevati
+- polinomi con x+1 come fattore permettono la rilevazione di errori di numero dispari
+- r deve essere il più grande possibile
+- nel caso di errori brust, con errore iniziato a i e finito in j il vettore errore si esprime come $e(x) = x^j+...+x^i$. Il numero di termini di questo polinomio è dato dal numero di errori della raffica ossia L=i-j. Ci saranno 3 classi
+  - L<=r tutti gli errori verranno rilevati
+  - L>=(r+1) l'errore non viene rilevato con probabilità pari a $(1/2)^{r}$
+  - L=(r+1) errore non rilevato con probabilità pari a $(1/2)^{r-1}$
 
 # PDF_9
+
+## Multiplazione
+
+Utilizzo dello stesso canale per più comunicazioni separate.
+
+### FDM (Frequency Division Multiplexing)
+
+Le comunicazioni vengono shiftate ad una frequenza superiore con un certo gap ed inviate.
+Nella rete telefonica ancora è ampliamente usata questa tecnica.
+
+![alt text](images/fdm.png)
+
+Considerando la banda fonica di larghezza B = 4kHz, ciascun canale multiplato occuperà una banda di 4kHz, distinta dalle bande di altri canali.
+Il numero di canali N multiplabili dipenderà dalla capaictà del mezzo trasmissivo di trasferire senza distorsioni un segnale complessivo di con larghezza BT = NB = N \* 4kHz.
+Il processo di traslazione è realizzato mediante modulazione di ampiezza di N portanti dette anche frequenze vertici.
+In ricezione il segnale dovrà essere demultiplato. Si filtrano le bande relative a ciascun canale e si demodula l'onda risultante per esstrarre segnale in banda base.
+Le frequenze delle varie portanti vegnono scelte per permettere da 12 a 10800 canali multiplabili.
+Questo segnale essendo analogico è molto sensibile al rumore.
+
+![alt text](images/fdm_esempio.png)
+
+In questo esempio ci sono 12 canali multiplati traslati in frequenza con portanti distanti di 4kHz (64-68.....-108 kHz). La banda del segnale trasmesso ha una larghezza di BT=12x4 kHz = 48kHz
+
+### WDM (Wavelength Division Multiplexing)
+
+Usata per segnali ottici, in modo da poter ottimizzare l'utilizzo di fibra ottica.
+Si modula la lunghezza del raggio luminoso così da inviare diversi raggi in contemporanea.
+
+![alt text](images/wdm.png)
+
+### D-WDM (Dense Wavelength Division Multiplexing)
+Capace di modulare fino a 16 lunghezze d'onda alla distanza di 0.08nm. Tali lunghezze sono modulate con flussi TDM e raggiungono velocità di 1Tb/s.
+#### EDFA
+Amplificatori in fibra ottica drogata, usano un tratto di fibra drogata di lunghezza L come mezzo perl'amplificazione del segnale ottico. Segnale ottice ed uno di pompa vengono multiplati in una fibra drogata ed il segnale risulta amplificato per effetto dell'emissione di fotoni grazie all'interazione del segnale ottico di pompa con gli ioni del drogante
+
+### C-WDM (Corsae Wavelength Division Multiplexing)
+Usata per reti metropolitane a basso costo. Usa maggiori spaziature tra i canali con risparmio a livello economico.
+La spaziatura è di crica 20nm con frequenze da 1310nm e a 1610nm.
+
+### TDM (Time Division Multiplexing)
+Usa la temporizzazione per i differenti segnali. Può essere sincrono o statistico:
+  - in tdm sincrono gli intervalli vengono scelti indipendeentemente dalla presenza di dati da spedire
+  - in tdm statistico gli intervalli vengono allocali soo quando ci sono dati da spedire.
+Un segmento di dati è quindi diviso in base al numero di canalisi logici che possono essere usati.
+In quello statistico non c'è corrispondenza fra dato e canale, cosa che invece in quello sincrono c'è.
+
+![alt text](images/tdm.png)
+
+### Modem
+Contrazione di Modulatore/Demodulatore.
+Converte in segnali che arrivano dal DTE in segnali adatti per la trasmissione solitamente in linea telefonica.
+Si parla quindi di modem fonici, con range di frequenze da 300-3400Hz.
+Svolge diverse funzioni:
+  - trasforma un segnale numero dal DTE in segnale anlogico e viceversa
+  - gestisci circuiti di comando e controlla l'interfaccia
+  - corregge errori e anlizza i dati che riceve.
+Oltre ai modem fonici possiamo anche considerare altri tipi di modem,
+quali:
+  - modem ISDN (128 kbps)
+  - modem xDSL (da 640 kbps a 100 Mbps)
+  - modem per PLC - Power Line Communications, su linea elettrica (640 Kbps – 200 Mbps)
+  - modem GPRS/UMTS/HSDPA/LTE, spesso integrati nei cellulari o come Pc card (56 Kbps – 7.2 Mbps - 100 Mbps)
+  - modem in banda base, collega direttamente due utenti su doppino telefonico
+Ognuno dei modem visti può essere interno o esterno, con gli
+svantaggi e i vantaggi del caso.
+
+Modem esterni:
+  - modem seriali (cavo COM1/2)
+  - modem paralleli ( cavo parallelo alla LPT1/2)
+  - modem usb
+
+Modem interni:
+  - modem interni PCI => lavorano sul BUS PCI
+  - modem interni PCMCIA o PC card => usati solo in pc portatili
+
+Il modem fonico opera una modulazione per comprimere la banda del segnale.
+  - bassa velocità: fino a 1200 [bit/s] => modulazione FSK
+  - a velocità media: fino 4800 [bit/s] => modulazione PSK o DPSK
+  - alta velocità: oltre 9600 [bit/s] => modulazione QAM
+Influenzano la velocità fattori come il tipo di esercizio e d il tipo di trasmissione.
+
+Lo standard delle tecniche di interfacciamento viene deciso dall'ITU. Ogni sigla ha una specifica di progetto.
+  - FSK V.21
+  - QAM V.29 => codifica multilivello su 4 bit. Spettro di circa 2400Hz con portante di 1700(+1)Hz
+  - QAM V.32 => modalità sincronoa ptp con modulazione QAM, 2400 baud, quadribit su 16 livelli. 9600 bit/s. Implemente la codifica Trellis e la soppressione dell'eco.
+  La Trellis assicura una immunità più alta al rumroe. Si aumenta la ridondanza della trasmissione. Ogni 4 bit uno ridondante. Ci sarà quindi una costellazione di 32 livelli.
+  La soppressione dell'eco si realizza inviando in full-duplex il segnale ed una sua replica invertita così da poter usare la stessa portante e la stessa tecnica di modulazione.
+  - Modem V.34 => collegamenti con due terminazioni analogiche. Velocità di 28880 bit/s. Usa una codifica non lineare, multidimensionale e sfrutta tutta lla band disponibile.
+  - Modem V.90 => migliora le prestazioni del V.34:
+    - il flusso verso la rete è minore
+    - il segnale verso l'utente è tipo dati
+  - Modem V.92 => Aumenta l'up stream a 48Kbps, usa il quick connet, mantine le connessioni attive fino a 16 minuti, usa una codifica adattiva.
+
+### ADSL (Asymetrical Digital Subscriber Line)
+Il doppino telefonico possiede una discreta banada che però viene limitata a osoli 4kHz.
+Per ovviare a ciò si usano due tecniche per modulare il segnale.
+- CAP (Carrie-less Amplitude Phase), una versione più sofisticata di QAM e DMT.
+Tale tecnologia modula un insieme di 256 sottoportanti distanti 4.3125kHz per rientrare nella banda 26kHz-1, 1MHz.
+La banda si può suddividere in 3 zone.
+  - una bassa fino a 4kHz
+  - una media per l'upstream
+  - una alta per il downstream
+Le velocità teoriche sono dell''ordine degli 8Mbit/s in downstream e 800kbit/s in upstream.
+
+Questa tecnologia non è ancora standardizzata, ogni costruttore ha ua sua variante. Le linee guida sono dettate dallo standard ANSI T1.423. Ammette solo la modullazione DTM, aggiunge la modalità di adattamento di rateo e la connessione a livello di internetworking con reti ATM.
+
+#### Interfaccia Centronics Parallela
+Interfaccia parallela a 8 bit asincrona usata ad esempio per collegamento pc stampante. Monodirezionale.
+Si possono ormai anche avere collegamenti di dispositivi input.
+Connettore di tipo D a 25 poli Femmina.
+Ci possono essere fino a 3 interfacce LPT parallel, ognuna con 3 indirizzi contigui per le periferiche.
+Il primo registro contiene i dati, il secondo tiene lo stato della stampante.
+
+#### Interfaccia RS232
+Sul DTE sta la spina, sul DCE la presa.
+Alcuni DCE non hanno la presa esterna visto che il cavo entra dentro direttamente.
+In generale il connettore per la Rs-232C è a 25 poli mentre in altre applicazione potrebbe essere in uno un connettore a 9 poli.
+Caratteristiche delle linee(circuiti) dell'interfaccia V.24. Il numero di linee dipende dal tipo di collegamento e dai modem impiegati.
+
+C101 => massa di protezione => linea collegata alla massa dei segnali C102
+C102 => massa di segnali => linea comune di riferimento per tutti i circuiti
+C103 => dati in trasmissione (DTE a DCE) => i dati binari in forma seriale generati dal DTE vanno verso il DCE.
+C104 => dati in ricezione (DCE a DTE)
+C105 => richiesta di trasmissione (DTE a DCE) => trasmette la portante in linea
+C106 => pronto a trasmettere (DCE a DTE) => il DCE è pronto a trasmettere in linea e rappresenta la risposta alla linea C105
+C107 => Modem pronto (DCE a DTE) => modem collegato
+C108 => DTE pronto (DTE a DCE)
+C109 => portante in rcezione (DCE a DTE) => la portante in linea è ad un livello superiore alla soglia di ricezione.
+C110 => rilevatore della qualità del segnale (DCE a DTE) => tutti i dati sono corretti
+C111 => Selezione di velocità (DTE a DCE) => obbliga il modem a scegliere la velocità più elevata.
+C112 => Selezione di velocità (DCE a DTE) => il modem seleziona la velocità usata per la connessione.
+C113 => clock di trasmissione da DTE (DTE a DCE) => clock del DTE. Le transizioni devono coincidere con la posizione di ciascun bit
+C114 => clock di trasmissione da DCE (DCE a DTE) => clock del DCE
+C115 => clock in ricezione => clock per i dati che il DTE riceve su C104.
+C118 => trasmissioni dati sul supervisore => stesse funzioni del C103 ma al canale del supervisore.
+C119 => ricezione dati sul supervisore (DCE a DTE) => come C104
+C120 => richiesta trasmissione su canale supervisore
+C121 => pronto a trasmettere sul canale del supervisore
+C122 => rilevatore segnale di linea dati supervisore => uguale a C109
+C123 => rilevatore qualità => stessa cosa di C110
+C125 => CHiamata in arrivo (DCE a DTE) => indica al DTE che il modem ha ricevuto una chiamata. La risposta avviene sulla linea C108
+C125 => scelta frequenza trasmissione.
+
+#### Interfaccia USB
+Inventata nel 1995 per sostituire le attuali porte seriali parallele per il collegamento al PC.
+  - 1.0 = 12Mbps
+  - 2.0 = 480Mbps
+  - 3.0 = 5Gbps 
+Ciascuno dei connettori nel retro del pc è a 4 poli disposti in verticale. GND, DATI +, DATI -, +5V
+
+#### Interfaccia IEEE 1394
+Seriale e bidirezionale, fu concepita per le sue particolari caratteristiche di velocità. Per superare il limite iniziale della portata del cavo è stato concepito uno standard che ha collegamenti fino a 100m.
+Per i pc l'interfacccia IEEE 1394 è disponibile sotto forma di schede su PCI con connettori a 4 poin o a 6 pin
 
 # PDF_10
 
