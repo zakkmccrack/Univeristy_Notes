@@ -1055,6 +1055,58 @@ Per i pc l'interfacccia IEEE 1394 è disponibile sotto forma di schede su PCI co
 
 # PDF_5
 
+[...]
+
+### OSPF
+Sviluppato nel 1988 da IETF.
+diventato standard nel 1990 per routing in un AS.
+  - è aperto
+  - supporta subnet variabili
+  - routing dinamico
+  - routin in base al tipo di servizio
+  - esegue il bilanciamento del carico
+  - supporta sistemi gerarchici
+
+### EGP
+Exterior Gateway Protocol. Protocollo per scambio di informazioni all'interno di un AS.
+Messaggi come HELLO e IHEARDYOU sono messaggi utili per stabilire connessioni tra EGP.
+EGP può essere un processo separato usando EGP User Process oppure può girare come parte del Gateway Routing Daemon (gated)
+Sempre meglio usare gated.
+Quando un egpup parte, legge da un file di init o conf:
+  - autonomoussystem asn => numero del as
+  - egpneighbour neighbour => host name o ip che è il suo neighbout
+  - egpmaxacquite number => numero massimo di vicini
+  - net destination gateway address metric number => installa una stati route
+  - egpnetsreachable net1... => definisce le reti che si consigliano come raggiungibili ai propri neighbour
+  - defaultgateway address => install una default route di tipo active
+
+### BGP
+Border Gateway Protocol. Protocollo usato per la comunicazione tra AS.
+Si basa su un algoritmo vettore distanza e si occupa del transito di dati di terze parti su una certa rete. Le reti sono suddivise in:
+  - reti sub => unica sessione al grafo BGP
+  - reti multiconnesse => usata per il traffic in transito
+  - reti di transito =>  spesso usate per il traffico da terze parti. In genere sono reti di tipo backbone
+  
+
+### Gateway Routing Daemon
+E' un unico pacchetto che combina RIP, Hello, EGP e BGP.
+I suoi protocolli sono compoatibili con gli stessi protocolli forniti per le altre implementazioni.
+
 # PDF_6
+
+### Gateway Routing Daemon
+Gated elabora le informazioni date dai vari protocolli e seleziona la route migliore. Le varie route apprese da protocolli Interior vengono annunciate con protocolli exterior.
+La configurazione sta tutta in un file conf con un'unica sintassi.
+Esiste una tabella routing metric per decidere la bonta di una route per i varai protocolli. Quando viene comunicata una route, questa tabella viene usata.
+Al contrario quando riceve consigli da altri, questi vengono elaborati  in base al protocolli e al valore di preference che gated ha.
+
+### Configurazione di gated
+La sintassi del file conf è simile a quella di C. Il file si divide in 4 sezioni
+  - comandi di definizione
+  - comandi di protocollo
+  - comandi statici
+  - comandi di controllo
+  - comandi di direttive
+  - comandi di trace
 
 # PDF_PARTE_FINALE
